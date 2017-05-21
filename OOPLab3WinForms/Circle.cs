@@ -59,14 +59,14 @@ namespace OOPLab3
             prevY = (float)Radius;
             float x;
             float y;
-            for (x = -(float)Radius; x <= (float)Radius; x += 0.00001f)
+            for (x = -(float)Radius; x <= (float)Radius; x += 0.001f)
             {
                 y = (float)Math.Sqrt(Math.Pow(Radius, 2) * (1 - Math.Pow(x / Radius, 2)));
                 DrawLine((float)X + prevX, (float)Y + prevY, (float)Z, (float)X + x, (float)Y + y, (float)Z);
                 prevX = x;
                 prevY = y;
             }
-            for (x = (float)Radius; x >= -(float)Radius; x -= 0.00001f)
+            for (x = (float)Radius; x >= -(float)Radius; x -= 0.001f)
             {
                 y = -(float)Math.Sqrt(Math.Pow(Radius, 2) * (1 - Math.Pow(x / Radius, 2)));
                 DrawLine((float)X + prevX, (float)Y + prevY, (float)Z, (float)X + x, (float)Y + y, (float)Z);

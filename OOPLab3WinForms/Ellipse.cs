@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Security.Cryptography.X509Certificates;
 using OOPLab3WinForms;
 using SharpGL.Enumerations;
 
@@ -49,15 +48,17 @@ namespace OOPLab3
             Program.GL.Begin(BeginMode.Lines);
             float x;
             float y;
-            for (x = 2 * -(float) Radius + 0.2f; x <= 2 * (float) Radius + 0.2f; x += 0.01f)
+            for (x = 2 * -(float) Radius; x <= 2 * (float) Radius; x += 0.001f)
             {
+                
                 y = (float) Math.Sqrt(Math.Pow(Radius2, 2) * (1 - Math.Pow(x / Radius, 2)));
                 DrawLine((float)X + prevX, (float)Y + prevY, (float)Z, (float)X + x, (float)Y + y, (float)Z);
                 prevX = x;
                 prevY = y;
             }
-            for (x = 2 * (float)Radius; x >= 2 * -(float)Radius + 0.2f; x -= 0.01f)
+            for (x = 2 * (float)Radius; x >= 2 * -(float)Radius; x -= 0.001f)
             {
+                
                 y = -(float)Math.Sqrt(Math.Pow(Radius2, 2) * (1 - Math.Pow(x / Radius, 2)));
                 DrawLine((float)X + prevX, (float)Y + prevY, (float)Z, (float)X + x, (float)Y + y, (float)Z);
                 prevX = x;
